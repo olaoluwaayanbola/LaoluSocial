@@ -5,6 +5,7 @@ const morgan = require("morgan")
 const dotenv = require("dotenv")
 const mongoose = require("mongoose")
 const userRoute = require("./roots/users")
+const authRoute = require("./roots/users")
 
 // init to kee key safe 
 dotenv.config()
@@ -21,8 +22,8 @@ app.use(helmet())
 app.use(morgan("common"))
 
 // middleware for routes
+app.use("/api/auth",authRoute)
 app.use("/api/users",userRoute)
-
 
 
 // // get request home
@@ -30,6 +31,6 @@ app.use("/api/users",userRoute)
 //     res.send("welcome to homepage")
 // })
 
-app.listen(5000,() => {
+app.listen(6000,() => {
     console.log("sever is online")
 })
