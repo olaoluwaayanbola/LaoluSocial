@@ -21,7 +21,7 @@ app.use(helmet())
 app.use(morgan("common"))
 
 // middleware for routes
-app.use("/api/user",userRoute)
+app.use("/api/users",userRoute)
 
 
 
